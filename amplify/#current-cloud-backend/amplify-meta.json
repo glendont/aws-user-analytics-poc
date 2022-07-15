@@ -1,0 +1,39 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-travelbuddyapj-cyfirmaexp-233708-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891048848327:role/amplify-travelbuddyapj-cyfirmaexp-233708-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891048848327:role/amplify-travelbuddyapj-cyfirmaexp-233708-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-travelbuddyapj-cyfirmaexp-233708-deployment",
+      "UnauthRoleName": "amplify-travelbuddyapj-cyfirmaexp-233708-unauthRole",
+      "StackName": "amplify-travelbuddyapj-cyfirmaexp-233708",
+      "StackId": "arn:aws:cloudformation:us-east-1:891048848327:stack/amplify-travelbuddyapj-cyfirmaexp-233708/fef1ce90-0453-11ed-96ca-0acdf33b65cf",
+      "AmplifyAppId": "d3pybv5gvy3nx5"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2022-07-15T15:37:52.021Z",
+      "cicd": "cicd"
+    },
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-travelbuddyapj-cyfirmaexp-233708-deployment/amplify-cfn-templates/hosting/template.json",
+        "logicalId": "hostingS3AndCloudFront"
+      },
+      "lastPushTimeStamp": "2022-07-15T15:41:27.430Z",
+      "output": {
+        "S3BucketSecureURL": "https://travelbuddyapj-20220715233949-hostingbucket-cyfirmaexp.s3.amazonaws.com",
+        "WebsiteURL": "http://travelbuddyapj-20220715233949-hostingbucket-cyfirmaexp.s3-website-us-east-1.amazonaws.com",
+        "Region": "us-east-1",
+        "HostingBucketName": "travelbuddyapj-20220715233949-hostingbucket-cyfirmaexp"
+      },
+      "lastPushDirHash": "8eTN/g2UmSjbnFqPejwaGlJBxhk="
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+    "available_hotels": [
+        {
+            "id": 1,
+            "name": "Finns Beach Resort",
+            "country":"Bali, Indonesia",
+            "address":"Jalan Pantai Berawa No: 5, Tibubeneng, North Kuta, Indonesia",
+            "short_description":"Explore Bali's Adventurous Islands",
+            "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80",
+            "price":"150", 
+            "review_count": "308",
+            "special":true,
+            "special_time_remaining":"38",
+            "property_highlights":["Spa and Wellness Centre","Free Buffet Breakfast","Min.3 Nights"]
+
+          },
+          {
+            "id": 2,
+            "name": "Sheraton Towers",
+            "country":"Singapore",
+            "address":"39 Scotts Road Sheraton Towers Hotel, Singapore 228230",
+            "short_description":"Explore Sinagpore's very Best",
+            "image": "https://images.unsplash.com/photo-1520056107387-2cb5354436ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80",
+            "price":380, 
+            "review_count": "1832",
+            "special":true,
+            "special_time_remaining":"34",
+            "property_highlights":["Free Gym and Saunas","Free Buffet Breakfast","Min. 5 Nights"]
+
+          },
+          {
+            "id": 3,
+            "name": "Baiyoke Sky Hotel",
+            "country":"Bangkok, Thailand",
+            "address":"120/359 Soi Ratchaprarop 3, Makkasan, Ratchathewi, Bangkok 10400",
+            "short_description":"Experience Thailand's Rich Culture",
+            "image": "https://images.unsplash.com/photo-1590091771995-3180cec0dde4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
+            "price":210, 
+            "review_count": "87",
+            "special":true,
+            "special_time_remaining":"18",
+            "property_highlights":["Spa and Wellness Centre","Free Buffet Breakfast","Min. 3 Nights"]
+
+          },
+          {
+            "id": 4,
+            "name": "Finns Beach Resort",
+            "country":"Bali, Indonesia",
+            "address":"Jalan Pantai Berawa No: 5, Tibubeneng, North Kuta, Indonesia",
+            "short_description":"Explore Bali's Adventurous Islands",
+            "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80",
+            "price":150, 
+            "review_count": "308",
+            "special":false,
+            "property_highlights":["Free Gym and Saunas","Free Buffet Breakfast","Min. 5 Nights"]
+
+          },
+          {
+            "id": 5,
+            "name": "Sheraton Towers",
+            "country":"Singapore",
+            "address":"39 Scotts Road Sheraton Towers Hotel, Singapore 228230",
+            "short_description":"Explore Sinagpore's very Best",
+            "image": "https://images.unsplash.com/photo-1520056107387-2cb5354436ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2534&q=80",
+            "price":380, 
+            "review_count": "1832",
+            "special":true,
+            "special_time_remaining":"78",
+            "property_highlights":["Free Gym and Saunas","Free Buffet Breakfast","Min. 5 Nights"]
+
+          },
+          {
+            "id": 6,
+            "name": "Baiyoke Sky Hotel",
+            "country":"Bangkok, Thailand",
+            "address":"120/359 Soi Ratchaprarop 3, Makkasan, Ratchathewi, Bangkok 10400",
+            "short_description":"Experience Thailand's Rich Culture",
+            "image": "https://images.unsplash.com/photo-1590091771995-3180cec0dde4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
+            "price":210, 
+            "review_count": "87",
+            "special":false,
+            "property_highlights":["Spa and Wellness Centre","Free Buffet Breakfast","Min.3 Nights"]
+
+          }
+    ]
+  }
