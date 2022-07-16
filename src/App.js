@@ -11,6 +11,9 @@ import HotelPage from "./components/pages/HotelPage";
 import PreLoginPage from "./components/pages/PreLoginPage";
 
 // Insert AWS Amplify import statements here
+import { Amplify, Analytics } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 const App = () => {
   return (

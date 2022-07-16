@@ -16,6 +16,27 @@ import Select from "@material-ui/core/Select";
 import flightsData from "../data/flights.json"
 import useWindowDimensions from "../function/useWindowDimensions";
 
+import { Amplify, Analytics, AWSKinesisProvider} from 'aws-amplify';
+Analytics.addPluggable(new AWSKinesisProvider());
+Analytics.configure({
+  AWSKinesis: {
+
+      // OPTIONAL -  Amazon Kinesis Firehose service region
+      region: 'us-east-1',
+      
+      // OPTIONAL - The buffer size for events in number of items.
+      bufferSize: 1000,
+      
+      // OPTIONAL - The number of events to be deleted from the buffer when flushed.
+      flushSize: 100,
+      
+      // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
+      flushInterval: 5000, // 5s
+      
+      // OPTIONAL - The limit for failed recording retries.
+      resendLimit: 5
+  } 
+});
 
 const FlightSearchComponent = () => { 
 
@@ -82,7 +103,17 @@ const FlightSearchComponent = () => {
   }));
   const classes = useStyles();
 
+  const Analytics_function_searchButton = () => { 
+    console.log("Calling to pinpoint...")
+    Analytics.record({
+      name: 'flightSearch', 
+      attributes: { action: 'CLICK', view: 'decyfir/flightSearch', lat:'1.290270', long:'103.851959'},  
+      metrics: { numOfClicks: 1 },
+  });
+  console.log("Pinpoint (flightSearch,ll) called!")
+  }
 
+ 
 return(
 
 <Fragment> 
@@ -130,7 +161,7 @@ return(
 
 </Col>
 <Col xl={2} style={{paddingRight:"2%"}}> 
-<Button variant="outline-secondary" className="search-button" style={{ border:"solid 1px",marginLeft:"1%" }}><center> <h4 style={{marginTop:"6px", fontSize:'18px', color:'black'}}> Search </h4></center> </Button>{' '}
+<Button variant="outline-secondary" className="search-button" style={{ border:"solid 1px",marginLeft:"1%" }}><center> <h4 style={{marginTop:"6px", fontSize:'18px', color:'black'}} onClick={Analytics_function_searchButton}> Search </h4></center> </Button>{' '}
 </Col> 
 </Row> 
 

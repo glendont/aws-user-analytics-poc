@@ -15,6 +15,57 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import useWindowDimensions from "../function/useWindowDimensions";
 
+import { Amplify, Analytics, AWSKinesisProvider} from 'aws-amplify';
+Analytics.addPluggable(new AWSKinesisProvider());
+Analytics.configure({
+  AWSKinesis: {
+
+      // OPTIONAL -  Amazon Kinesis Firehose service region
+      region: 'us-east-1',
+      
+      // OPTIONAL - The buffer size for events in number of items.
+      bufferSize: 1000,
+      
+      // OPTIONAL - The number of events to be deleted from the buffer when flushed.
+      flushSize: 100,
+      
+      // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
+      flushInterval: 5000, // 5s
+      
+      // OPTIONAL - The limit for failed recording retries.
+      resendLimit: 5
+  } 
+});
+Analytics.autoTrack('hotelpageView', {
+  // REQUIRED, turn on/off the auto tracking
+  enable: true,
+  // OPTIONAL, the event name, by default is 'pageView'
+  eventName: 'hotelpageView',
+  // OPTIONAL, the attributes of the event, you can either pass an object or a function 
+  // which allows you to define dynamic attributes
+  attributes: {
+      attr: 'attr'
+  },
+  // when using function
+  // attributes: () => {
+  //    const attr = somewhere();
+  //    return {
+  //        myAttr: attr
+  //    }
+  // },
+  // OPTIONAL, by default is 'multiPageApp'
+  // you need to change it to 'SPA' if your app is a single-page app like React
+  type: 'multiPageApp',
+  // OPTIONAL, the service provider, by default is the Amazon Pinpoint
+  provider: 'AWSPinpoint',
+  // OPTIONAL, to get the current page url
+  getUrl: () => {
+      // the default function
+      return window.location.origin + window.location.pathname;
+  }
+});
+
+
 
 const HotelSearchComponent = () => { 
   const { width } = useWindowDimensions();
@@ -28,8 +79,6 @@ const HotelSearchComponent = () => {
     justifyContent: "center",
     width: "72%",
   })
-
-
 
   useEffect(() => {
     function handleResize() {
@@ -88,6 +137,16 @@ const HotelSearchComponent = () => {
 
   const classes = useStyles();
 
+  const Analytics_function_hotelSearch = () => { 
+    console.log("Calling to pinpoint...")
+    Analytics.record({
+      name: 'hotelSsearch', 
+      attributes: { action: 'CLICK', view: 'decyfir/hotelSearch', X:'7', Y:'3'},  
+      metrics: { numOfClicks: 1 },
+  });
+  console.log("Pinpoint (hotelSsearch) called!")
+  }
+
 return(
 
 <Fragment> 
@@ -116,7 +175,7 @@ return(
 </center> 
 </Col>
 <Col xs={12} xl={2}>  
- <Button variant="outline-secondary" className="search-button" style={{ border:"solid 0.5px", marginLeft:"2.2%" }}><center>  Search </center> </Button>{' '} 
+ <Button variant="outline-secondary" className="search-button" style={{ border:"solid 0.5px", marginLeft:"2.2%" }} onClick={Analytics_function_hotelSearch}><center>  Search </center> </Button>{' '} 
 </Col>
 </Row> 
 

@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "cyfirmademo_identitypool_527bcfa0",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "cyfirmademo",
+    "sharedId": "527bcfa0",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

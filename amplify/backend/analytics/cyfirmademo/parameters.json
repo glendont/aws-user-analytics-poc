@@ -1,0 +1,21 @@
+{
+    "appName": "cyfirmademo",
+    "roleName": "pinpointLambdaRole5e47cc26",
+    "cloudformationPolicyName": "cloudformationPolicy5e47cc26",
+    "cloudWatchPolicyName": "cloudWatchPolicy5e47cc26",
+    "pinpointPolicyName": "pinpointPolicy5e47cc26",
+    "authPolicyName": "pinpoint_amplify_5e47cc26",
+    "unauthPolicyName": "pinpoint_amplify_5e47cc26",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

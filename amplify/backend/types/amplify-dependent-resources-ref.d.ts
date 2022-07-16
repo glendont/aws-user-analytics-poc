@@ -1,10 +1,20 @@
 export type AmplifyDependentResourcesAttributes = {
-    "hosting": {
-        "S3AndCloudFront": {
+    "auth": {
+        "cyfirmademo": {
+            "IdentityPoolId": "string",
+            "IdentityPoolName": "string"
+        }
+    },
+    "analytics": {
+        "cyfirmademo": {
             "Region": "string",
-            "HostingBucketName": "string",
-            "WebsiteURL": "string",
-            "S3BucketSecureURL": "string"
+            "Id": "string",
+            "appName": "string"
+        },
+        "cyfirmademoKinesis": {
+            "kinesisStreamArn": "string",
+            "kinesisStreamId": "string",
+            "kinesisStreamShardCount": "string"
         }
     }
 }

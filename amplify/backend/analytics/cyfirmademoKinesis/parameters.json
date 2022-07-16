@@ -1,0 +1,12 @@
+{
+  "kinesisStreamName": "cyfirmademoKinesis",
+  "kinesisStreamShardCount": 1,
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authPolicyName": "kinesis_amplify_ebf0bfb6",
+  "unauthPolicyName": "kinesis_amplify_ebf0bfb6"
+}

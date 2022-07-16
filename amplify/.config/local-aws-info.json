@@ -1,5 +1,5 @@
 {
-  "cyfirmaexp": {
+  "dev": {
     "configLevel": "project",
     "useProfile": true,
     "profileName": "amplify-pinpoint"

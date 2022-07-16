@@ -13,7 +13,27 @@ import Row from "react-bootstrap/Row"
 import {SyncLoader} from "react-spinners"
 import Col from "react-bootstrap/Col"
 
-import { Auth, Storage } from 'aws-amplify';
+import { Amplify, Analytics, AWSKinesisProvider, Auth, Storage} from 'aws-amplify';
+Analytics.addPluggable(new AWSKinesisProvider());
+Analytics.configure({
+  AWSKinesis: {
+
+      // OPTIONAL -  Amazon Kinesis Firehose service region
+      region: 'us-east-1',
+      
+      // OPTIONAL - The buffer size for events in number of items.
+      bufferSize: 1000,
+      
+      // OPTIONAL - The number of events to be deleted from the buffer when flushed.
+      flushSize: 100,
+      
+      // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
+      flushInterval: 5000, // 5s
+      
+      // OPTIONAL - The limit for failed recording retries.
+      resendLimit: 5
+  } 
+});
 
 const NavigationBar = (props) => {
   const [click, setClick] = useState(false);
@@ -22,6 +42,36 @@ const NavigationBar = (props) => {
   const [photoUploaded, setphotoUploaded] = useState(false)
   const [isError, setisError] = useState(false)
   const [username,setUsername] = useState("")
+
+  const Analytics_function_TravelBuddy = () => { 
+    console.log("Calling to pinpoint...")
+    Analytics.record({
+      name: 'home', 
+      attributes: {action: 'CLICK', view: 'decyfir/home', X:'1', Y:'10'},  
+      metrics: { numOfClicks: 1 },
+  });
+  console.log("Pinpoint (home, long lat) called!")
+  }
+
+  const Analytics_function_signOut = () => { 
+    console.log("Calling to pinpoint...")
+    Analytics.record({
+      name: 'signOut', 
+      attributes: {action: 'CLICK', view: 'decyfir/signOut', X:'10', Y:'10'},  
+      metrics: { numOfClicks: 1 },
+  });
+  console.log("Pinpoint (SignOut) called!")
+  }
+
+  const Analytics_function_language = () => { 
+    console.log("Calling to pinpoint...")
+    Analytics.record({
+      name: 'language', 
+      attributes: {action: 'CLICK', view: 'decyfir/language', X:'8', Y:'10'},  
+      metrics: { numOfClicks: 1 },
+  });
+  console.log("Pinpoint (Language) called!")
+  }
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({
@@ -35,6 +85,15 @@ const NavigationBar = (props) => {
   }, []);
 
   const saveFile=()=>{
+    console.log("Calling to pinpoint...")
+    Analytics.record({
+      name: 'MakeChanges', 
+      attributes: { action: 'CLICK', view: 'decyfir/MakeChanges', X:'6', Y:'5'},  
+      metrics: { numOfClicks: 1 },
+  });
+  console.log("Pinpoint (MakeChanges) called!")
+
+
  // Insert code here
   }
 
@@ -161,7 +220,7 @@ return (
     <nav className="navbar">
       <ul className="nav-links">
       <li className="nav-links-homepage">
-          <Link to="/home" activeClassName="currentlyOn" style={{letterSpacing:"2px",fontSize:"20px", fontWeight:"bolder", textShadow:"0px 0px, 0px 0px, 10.5x 0px"}}>
+          <Link to="/home" activeClassName="currentlyOn" style={{letterSpacing:"2px",fontSize:"20px", fontWeight:"bolder", textShadow:"0px 0px, 0px 0px, 10.5x 0px"}} onClick={Analytics_function_TravelBuddy}>
             <SiFloatplane className="nav-icon" style={{marginRight:"5px", marginBottom:"4px"}} /> 
             TravelBuddy 
           </Link>{" "}
@@ -176,7 +235,7 @@ return (
       <ul className="navbar-logo">
       <li className="nav-links-lang">
         <LanguageIcon fontSize="small" style={{marginBottom:'2px', opacity:'0.8', marginRight:"1px"}} /> {'  '}
-          <Link to="/home">
+          <Link to="/home" onClick={Analytics_function_language}>
             English (UK)
           </Link>{" "}
         </li>
@@ -291,7 +350,7 @@ return (
 </Modal>
 </li>
 <li className="nav-links-join" >
-  <Button variant="light" size="sm" className="join-button" onClick={()=>{Auth.signOut()}}> <p className="join-button-text"> <center> Sign Out </center> </p></Button></li>
+  <Button variant="light" size="sm" className="join-button" onClick={Analytics_function_signOut}> <p className="join-button-text"> <center> Sign Out </center> </p></Button></li>
       </ul>
       </Fragment>
     </nav>
