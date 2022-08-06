@@ -104,10 +104,10 @@ const FlightSearchComponent = () => {
   const classes = useStyles();
 
   const Analytics_function_searchButton = () => { 
-    console.log("Calling to pinpoint...")
+    console.log("Calling to pinpoint 3...")
     Analytics.record({
       name: 'flightSearch', 
-      attributes: { action: 'CLICK', view: 'decyfir/flightSearch', lat:'1.290270', long:'103.851959'},  
+      attributes: { action: 'CLICK', view: 'decyfir/flightSearch', X:'1320', Y:'747' },  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (flightSearch,ll) called!")

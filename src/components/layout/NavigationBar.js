@@ -44,30 +44,30 @@ const NavigationBar = (props) => {
   const [username,setUsername] = useState("")
 
   const Analytics_function_TravelBuddy = () => { 
-    console.log("Calling to pinpoint...")
+    console.log("Calling to pinpoint 10...")
     Analytics.record({
       name: 'home', 
-      attributes: {action: 'CLICK', view: 'decyfir/home', X:'1', Y:'10'},  
+      attributes: { action: 'CLICK', view: 'decyfir/home', X:'335', Y:'75' },  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (home, long lat) called!")
   }
 
   const Analytics_function_signOut = () => { 
-    console.log("Calling to pinpoint...")
+    console.log("Calling to pinpoint 10...")
     Analytics.record({
       name: 'signOut', 
-      attributes: {action: 'CLICK', view: 'decyfir/signOut', X:'10', Y:'10'},  
+      attributes: { action: 'CLICK', view: 'decyfir/signOut', X:'1583', Y:'68' },  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (SignOut) called!")
   }
 
   const Analytics_function_language = () => { 
-    console.log("Calling to pinpoint...")
+    console.log("Calling to pinpoint 10...")
     Analytics.record({
       name: 'language', 
-      attributes: {action: 'CLICK', view: 'decyfir/language', X:'8', Y:'10'},  
+      attributes: {action: 'CLICK', view: 'decyfir/language', X:'1251', Y:'68'},  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (Language) called!")
@@ -88,7 +88,7 @@ const NavigationBar = (props) => {
     console.log("Calling to pinpoint...")
     Analytics.record({
       name: 'MakeChanges', 
-      attributes: { action: 'CLICK', view: 'decyfir/MakeChanges', X:'6', Y:'5'},  
+      attributes: { action: 'CLICK', view: 'decyfir/MakeChanges', X:'1061', Y:'550'},  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (MakeChanges) called!")
