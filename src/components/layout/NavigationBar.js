@@ -12,6 +12,7 @@ import {IoMdPhotos} from 'react-icons/io'
 import Row from "react-bootstrap/Row"
 import {SyncLoader} from "react-spinners"
 import Col from "react-bootstrap/Col"
+import { faker } from "@faker-js/faker"
 
 import { Amplify, Analytics, AWSKinesisProvider, Auth, Storage} from 'aws-amplify';
 Analytics.addPluggable(new AWSKinesisProvider());
@@ -33,6 +34,49 @@ Analytics.configure({
       // OPTIONAL - The limit for failed recording retries.
       resendLimit: 5
   } 
+});
+
+Analytics.autoTrack('session', {
+  // REQUIRED, turn on/off the auto tracking
+  enable: true,
+  // OPTIONAL, the attributes of the event, you can either pass an object or a function 
+  // which allows you to define dynamic attributes
+  attributes: {
+      Demographic: 'attr'
+  },
+
+  // when using function
+  attributes: () => {
+    const randomName = faker.name.findName(); // Rowan Nikolaus
+    const randomCountry = faker.address.country(); // Rowan Nikolaus
+    const randomAge = faker.datatype.number({
+      'min': 18,
+      'max': 50
+  });
+    const randomGender = faker.name.gender(true);
+    const randomJob = faker.name.jobArea();  
+    const randomLong = faker.address.longitude();
+    const randomLat = faker.address.latitude();
+     console.log(randomName)
+     console.log(randomCountry)
+     console.log(randomAge)
+     console.log(randomGender)
+     console.log(randomJob)
+     console.log(randomLong)
+     console.log(randomLat)
+
+     return {
+      "randomName":randomName,
+      "randomAge": randomAge,
+      "randomGender": randomGender,
+      "randomCountry": randomCountry,
+      "randomJob": randomJob,
+      "randomLong": randomLong,
+      "randomLat": randomLat,
+     }
+  },
+  // OPTIONAL, the service provider, by default is the Amazon Pinpoint
+  provider: 'AWSPinpoint'
 });
 
 const NavigationBar = (props) => {

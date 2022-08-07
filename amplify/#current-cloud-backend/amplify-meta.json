@@ -28,14 +28,14 @@
         "mfaTypes": [],
         "verificationMechanisms": []
       },
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cyfirmademo-dev-235902-deployment/amplify-cfn-templates/auth/cyfirmademo-cloudformation-template.json",
-        "logicalId": "authcyfirmademo"
-      },
-      "lastPushTimeStamp": "2022-07-15T16:48:00.973Z",
       "output": {
         "IdentityPoolId": "us-east-1:f1b51030-be6c-4e2a-851f-8202387c89e0",
         "IdentityPoolName": "cyfirmademo_identitypool_527bcfa0__dev"
+      },
+      "lastPushTimeStamp": "2022-08-07T15:22:25.519Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cyfirmademo-dev-235902-deployment/amplify-cfn-templates/auth/cyfirmademo-cloudformation-template.json",
+        "logicalId": "authcyfirmademo"
       },
       "lastPushDirHash": "rmFvI/L6kiSX9zh/cuELUq8qiG8="
     }
@@ -44,30 +44,30 @@
     "cyfirmademo": {
       "service": "Pinpoint",
       "providerPlugin": "awscloudformation",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cyfirmademo-dev-235902-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
-        "logicalId": "analyticscyfirmademo"
-      },
-      "lastPushTimeStamp": "2022-07-15T16:48:00.976Z",
       "output": {
         "appName": "cyfirmademo-dev",
         "Region": "us-east-1",
         "Id": "54f6e85d51c749e68a69fd5d39e7f06b"
+      },
+      "lastPushTimeStamp": "2022-08-07T15:22:25.519Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cyfirmademo-dev-235902-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+        "logicalId": "analyticscyfirmademo"
       },
       "lastPushDirHash": "Sr8uQyZbEPCF5wsJqwMwBCWOKDc="
     },
     "cyfirmademoKinesis": {
       "service": "Kinesis",
       "providerPlugin": "awscloudformation",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cyfirmademo-dev-235902-deployment/amplify-cfn-templates/analytics/kinesis-cloudformation-template.json",
-        "logicalId": "analyticscyfirmademoKinesis"
-      },
-      "lastPushTimeStamp": "2022-07-15T16:48:01.976Z",
       "output": {
         "kinesisStreamId": "cyfirmademoKinesis-dev",
         "kinesisStreamShardCount": "1",
         "kinesisStreamArn": "arn:aws:kinesis:us-east-1:891048848327:stream/cyfirmademoKinesis-dev"
+      },
+      "lastPushTimeStamp": "2022-08-07T15:22:25.519Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cyfirmademo-dev-235902-deployment/amplify-cfn-templates/analytics/kinesis-cloudformation-template.json",
+        "logicalId": "analyticscyfirmademoKinesis"
       },
       "lastPushDirHash": "jpzxHIHZC7gQeL7UOrNo+kkYIuA="
     }
