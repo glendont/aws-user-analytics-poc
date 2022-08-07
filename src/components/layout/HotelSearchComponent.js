@@ -118,7 +118,7 @@ const HotelSearchComponent = () => {
   });
   console.log("Pinpoint (hotelSearch) called!")
   }
-  
+
 return(
 
 <Fragment> 
