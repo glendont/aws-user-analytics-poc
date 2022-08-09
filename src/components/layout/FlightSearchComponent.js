@@ -107,7 +107,18 @@ const FlightSearchComponent = () => {
     console.log("Calling to pinpoint 3...")
     Analytics.record({
       name: 'flightSearch', 
-      attributes: { action: 'CLICK', view: 'decyfir/flightSearch', X:'1320', Y:'747' },  
+      attributes: { 
+        randomName:"NIL",
+        randomAge: 0,
+        randomGender: "NIL",
+        randomCountry: "NIL",
+        randomJob: "NIL",
+        randomLong: 0,
+        randomLat: 0,
+        action: 'CLICK', 
+        view: 'decyfir/flightSearch', 
+        X:'1320', 
+        Y:'747' },  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (flightSearch,ll) called!")

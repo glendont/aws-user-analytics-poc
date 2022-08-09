@@ -42,7 +42,7 @@ Analytics.autoTrack('session', {
   // OPTIONAL, the attributes of the event, you can either pass an object or a function 
   // which allows you to define dynamic attributes
   attributes: {
-      Demographic: 'attr'
+      Demographics: 'attr'
   },
 
   // when using function
@@ -66,13 +66,17 @@ Analytics.autoTrack('session', {
      console.log(randomLat)
 
      return {
-      "randomName":randomName,
-      "randomAge": randomAge,
-      "randomGender": randomGender,
-      "randomCountry": randomCountry,
-      "randomJob": randomJob,
-      "randomLong": randomLong,
-      "randomLat": randomLat,
+      randomName:randomName,
+      randomAge: randomAge,
+      randomGender: randomGender,
+      randomCountry: randomCountry,
+      randomJob: randomJob,
+      randomLong: randomLong,
+      randomLat: randomLat,
+      action:"NIL",
+      view:"NIL",
+      X:"0",
+      Y:"0"
      }
   },
   // OPTIONAL, the service provider, by default is the Amazon Pinpoint
@@ -91,8 +95,19 @@ const NavigationBar = (props) => {
     console.log("Calling to pinpoint 10...")
     Analytics.record({
       name: 'home', 
-      attributes: { action: 'CLICK', view: 'decyfir/home', X:'335', Y:'75' },  
-      metrics: { numOfClicks: 1 },
+      attributes: { 
+      randomName:"NIL",
+      randomAge: 0,
+      randomGender: "NIL",
+      randomCountry: "NIL",
+      randomJob: "NIL",
+      randomLong: 0,
+      randomLat: 0,
+      action:"CLICK",
+      view:"decyfir/home",
+      X:"335",
+      Y:"70"
+    }, 
   });
   console.log("Pinpoint (home, long lat) called!")
   }
@@ -101,8 +116,18 @@ const NavigationBar = (props) => {
     console.log("Calling to pinpoint 10...")
     Analytics.record({
       name: 'signOut', 
-      attributes: { action: 'CLICK', view: 'decyfir/signOut', X:'1583', Y:'68' },  
-      metrics: { numOfClicks: 1 },
+      attributes: { 
+        randomName:"NIL",
+        randomAge: 0,
+        randomGender: "NIL",
+        randomCountry: "NIL",
+        randomJob: "NIL",
+        randomLong: 0,
+        randomLat: 0,  
+        action: 'CLICK',
+        view: 'decyfir/signOut', 
+        X:'1583', 
+        Y:'68' },  
   });
   console.log("Pinpoint (SignOut) called!")
   }
@@ -111,8 +136,18 @@ const NavigationBar = (props) => {
     console.log("Calling to pinpoint 10...")
     Analytics.record({
       name: 'language', 
-      attributes: {action: 'CLICK', view: 'decyfir/language', X:'1251', Y:'68'},  
-      metrics: { numOfClicks: 1 },
+      attributes: {
+        randomName:"NIL",
+        randomAge: 0,
+        randomGender: "NIL",
+        randomCountry: "NIL",
+        randomJob: "NIL",
+        randomLong: 0,
+        randomLat: 0,
+        action: 'CLICK', 
+        view: 'decyfir/language', 
+        X:'1251', 
+        Y:'68'},  
   });
   console.log("Pinpoint (Language) called!")
   }
@@ -132,8 +167,18 @@ const NavigationBar = (props) => {
     console.log("Calling to pinpoint...")
     Analytics.record({
       name: 'MakeChanges', 
-      attributes: { action: 'CLICK', view: 'decyfir/MakeChanges', X:'1061', Y:'550'},  
-      metrics: { numOfClicks: 1 },
+      attributes: { 
+        randomName:"NIL",
+        randomAge: 0,
+        randomGender: "NIL",
+        randomCountry: "NIL",
+        randomJob: "NIL",
+        randomLong: 0,
+        randomLat: 0,
+        action: 'CLICK', 
+        view: 'decyfir/MakeChanges', 
+        X:'1061', 
+        Y:'550'},  
   });
   console.log("Pinpoint (MakeChanges) called!")
 

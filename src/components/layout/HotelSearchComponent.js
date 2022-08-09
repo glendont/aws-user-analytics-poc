@@ -113,7 +113,18 @@ const HotelSearchComponent = () => {
     console.log("Calling to pinpoint 15...")
     Analytics.record({
       name: 'hotelSearch', 
-      attributes: { action: 'CLICK', view: 'decyfir/hotelSearch', X:'1320', Y:'747' },  
+      attributes: { 
+        randomName:"NIL",
+        randomAge: 0,
+        randomGender: "NIL",
+        randomCountry: "NIL",
+        randomJob: "NIL",
+        randomLong: 0,
+        randomLat: 0,
+        action: 'CLICK', 
+        view: 'decyfir/hotelSearch', 
+        X:'1320', 
+        Y:'747' },  
       metrics: { numOfClicks: 1 },
   });
   console.log("Pinpoint (hotelSearch) called!")
